@@ -1,0 +1,386 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+* {
+    box-sizing: border-box; /* sets how the total width and height of an element is calculated.*/
+    margin: 0; /*Resets Margin*/
+    padding: 0; /*Resets Padding*/
+    font-family: 'Roboto', sans-serif; /*The font being used for the assessment and design sample*/
+}
+
+
+html, body {
+    /*Code on Line 13 will make the background image have a fade transpareceny applied to it*/  
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)) , url(./background.png);
+    background-repeat: no-repeat; /*Background image will NOT repeat*/
+    background-attachment: fixed; /**/
+    background-position: center; /*Centers Background Image*/
+    -webkit-background-size: cover; /*Covers the entire background page with the design image*/
+    background-size: cover; /*Covers the entire background page with the design image*/
+}
+
+body {
+    max-width: 100%; /*Max width applied to the body*/
+}
+
+.company__name {
+    color: #fff; /*White color for the company name*/
+    display: flex; /*Makes the company name class responsive for mobile*/
+    padding: 24px; /*Adds space to the class 24px up,down, left, and right*/
+    justify-content: space-between; /*This will add space in between elements*/
+    font-size: 24px; /*24px size applied to the font*/
+    font-weight: 400;/*400 bold applied to the font*/
+}
+
+.nav__link--list {
+    display: flex; /*Makes the class responsive for mobile*/
+    justify-content: center; /**/
+    align-items: center; /*Align items to the center of the page*/
+    width: 100%; /*Takes up 100% of the width horizontally*/
+    text-decoration: none; /*Removes the default underline for links*/
+    list-style-type: none; /*Removes bullet points*/
+    color: #fff; /*White color for the unordered list*/
+    position: absolute; /*Positioning of the class will be the same everytime*/
+
+}
+
+a {
+    color: #fff; /*White color applied to the links*/
+    list-style-type: none; /*Removes bullet points*/
+    text-decoration: none; /*Removes default underlline*/
+    display: flex; /*Responsive design for mobile*/
+    justify-content: center; /*Centers elements Horzontally*/
+    align-items: center; /*Centers elements Vertically*/
+    
+}
+
+button {
+    font-size: 24px; /*Makes the hamburger menu bigger than its default size*/
+    background-color: transparent; /*Transparency applied to the original bg*/
+    text-align: center; /*Centers the hamburger between the header and very top of page*/
+    border: none; /*No border will be applied*/
+    color: #fff; /*White Color for the hamburger*/
+    cursor: pointer; /*Mouse pointer will be shown when hovered*/
+}
+
+button:hover {
+    color: rgb(231, 255, 15); /*Yellowish color will be shown when mouse is hovering over the hamburger button for better end user experience*/
+}
+
+.nav__link--anchor {
+    position: relative; /*Positioning is relative to the parent class*/
+    bottom: 32px; /*Moves the class 32px above the default axis*/
+}
+
+li {
+    margin: 0 32px; /*32px left and right margin applied to list elements*/
+    display: flex; /*Responsive for mobile*/
+    align-items: center; /*Align items vertically*/
+    justify-content: center; /*Align items horizontally*/
+}
+
+.nav__link--more {
+    display: flex; /*Responsive for mobile*/
+    align-items: center; /*Align items vertically*/
+    justify-content: center; /*Align items horizontally*/
+}
+
+#about {
+    display: flex; /*Responsive for mobile*/
+    flex-wrap: wrap; /*Wraps the second paragraph into a new line*/
+    position: relative; /*Positioning for the second paragraph is relative to the parent class*/
+}
+
+/*====================================================*/
+
+/*Hamburger Menu*/
+
+.menu__backdrop {
+    position: absolute; /*Ensures the menu position doesn't change regardless when used in conjunction with top,right,bottom, or left properties*/
+    top: 0; /*Centers the backdrop menu on mobile when clicked*/
+    left: 0; /*Centers the backdrop menu on mobile when clicked*/
+    right: 0; /*Centers the backdrop menu on mobile when clicked*/
+    bottom: 0; /*Centers the backdrop menu on mobile when clicked*/
+    z-index: 100; /*Menu backdrop will always be shown due to the high z-index*/
+    display: flex;/*Responsive within the container*/
+    background-color: #242424; /*Black bg color*/
+    transition: all 300ms ease; /*Will have a easy fade in completely after a 300ms*/
+    align-items: center; /*Centers Vertically*/
+    justify-content: center; /*Centers Horizontally*/
+    opacity: 0; /*Makes the backdrop fully opaque*/
+    visibility: hidden; /*backdrop will be hidden until its clicked*/
+    display: none; /*Will NOT be shown on desktop*/
+}
+
+.menu--open .menu__backdrop {
+    visibility: visible; /*Makes the backdrop visible when clicked*/
+    opacity: 1; /*Makes the backdrop fully transparent when opened*/
+}
+
+.nav__link--bars--closed {
+    position: absolute; /*The Exit button will ALWAYS be in its original top right position*/
+    right: 14px; /*Makes the Exit Button 20px away from the left*/
+    top: 14px; /*Makes the Exit Button 20px away from the center-right*/
+    padding: 10px; /*Pushes exit button away from edge of page 8px all directions*/
+    color: white; /*white color for exit button*/
+}
+
+.menu--open {
+    max-height: 100vh; /*Max height applied to the hamburger menu upon click*/
+    overflow-y: hidden; /*Will make the page below the header not be shown, otherwise it will*/
+}
+
+.nav__link--list--mobile {
+    display: flex; /*Responsive*/
+    flex-direction: column; /*Items will be on top of each other and justify-content applied*/
+    align-items: center; /*Centers Vertically in conjuction with flex-direction*/
+}
+
+.nav__link--mobile {
+    padding: 32px 0; /*Padding Top and Bottom*/
+}
+
+.nav__link--anchor--mobile {
+    font-size: 40px; /*Makes item options bigger*/
+    color: #fff; /*Applies white color to text*/
+}
+
+.menu--open .menu__backdrop {
+    display: flex; /*Reponsive*/
+}
+
+
+/*================================================*/
+
+
+
+.simple__way {
+    display: flex; /*Responsive*/
+    flex-direction: column; /*Flex will be shown veritcally (column)*/
+    align-items: center; /*Centers Vertically*/
+    justify-content: center; /*Centers Horizontally*/
+    width: calc(100% / 2); /*Both paragraphs will take 50% of the screen each*/
+    
+    /* For Line 168
+
+    I am confident that there is a more efficent way of having this displayed 
+    towards the left side of the page rather than hardcoding to match the positioning 
+    with my approach. I would love to hear suggestions for better efficiency!*/
+    padding: 132px 0; 
+    
+}
+
+.simple__way--para {
+    text-transform: capitalize; /*Every word will begin with a capital letter*/
+    color: #fff; /*White color applied for the text*/
+    font-size: 40px; /*40px applied for the font size*/
+    font-weight: 600; /*600 bold applied to the font*/
+}
+
+.simple__way--motivate {
+    margin-top: 24px; /*24px top space margin applied*/
+    color: rgb(150, 142, 142); /*Slight gray color applied to the text*/
+    font-size: 16px; /*16px applied for the font size*/
+    padding-left: 64px; /*pushes space of the element more towards the left for 64px*/
+}
+
+form {
+    /* For Line 192
+    I attempted to apply a white color for the placeholder font, however I am only able to get a gray color,
+    even after playing around with the other classes associated with the form.
+    how would the team approach this problem and what solutions could be determined?*/
+
+    color: #fff; 
+    
+}
+
+.signup__form {
+    color: #eee; /*Slight white color applied to the header text*/
+    text-transform: uppercase; /*All text will be capitalized*/
+    font-size: 12px; /*12px applied to the font size*/
+    position: relative; /*Position relative to the parent*/
+    justify-content: center; /*Horizontal center*/
+    align-items: center; /*Vertical Center*/
+    display: flex; /*Responsive*/
+    margin-bottom: 32px; /*32px bottom space margin applied*/
+    letter-spacing: 1px; /*1px of spacing applied in between each letter*/
+}
+
+.signup__form--input {
+    display: flex; /*Responsive*/
+    justify-content: center; /*Horizontal center*/
+    align-items: center; /*Vertical Center*/
+    flex-direction: column; /*Flex will be shown veritcally (column)*/
+    border: 1px solid #ddd; /*1px of a solid, slightly white border will be applied around the form*/
+
+}
+
+
+input[type=text],
+input[type=email],
+input[type=password] {
+    padding: 10px; /*Adds space to the class 10px up,down, left, and right*/
+    color: #fff; /*White applied to inputting text, email, and password*/
+    display: flex; /*Responsive*/
+    justify-content: center; /*Center Horizontally*/
+    align-items: center; /*Center Vertically*/
+    flex-direction: column;
+    background-color: rgba(202, 198, 198, 0.2); /*Slight gray background for the form input*/
+    width: 375px; /*375px of width applied left and right to the form input*/
+    height: 40px; /*40px of height applied up and down to the form input*/
+
+}
+
+#togglePassword {
+    float: right; /*Pushes icon towards the right of the password input*/
+    margin-left: 300px; /*300px left space margin applied*/
+    margin-top: -25px; /*-25px top space margin applied*/
+    position: relative; /*Position relative to the parent*/
+    z-index: 2; /*Always shows the eye icon because the z-index has more priority than the default that the form has, which is zero.*/
+    cursor: pointer;  /*Mouse pointer will be shown when hovered*/
+  }
+
+
+.submit__form {
+    background-color: rgb(11, 97, 255); /*Bluish background color applied*/
+    color: #fff; /*White color font applied*/
+    width: 100%; /*Submit button will take 100% of the width of the form*/
+    cursor: pointer; /*Mouse pointer will be shown when hovered*/
+    text-align: center; /*Aligns text to the center of the element*/
+    width: 375px; /*375px of width applied left and right to the submit input*/
+    height: 40px; /*40px of height applied up and down to the submit input*/
+}
+
+
+
+.simple__way--clicking {
+    margin-top: 20px; /*20px top space margin applied*/
+    color: rgb(150, 142, 142); /*Slight gray color applied to font*/
+    font-size: 12px; /*12px applied to the font size*/
+}
+
+.terms {
+    font-size: 12px; /*12px applied to the font size*/
+    color: #fff; /*White color font applied*/
+    margin-top: 10px; /*10px top space margin applied*/
+}
+
+#end__page {
+    color: #fff; /*White color font applied*/
+    font-size: 12px; /*12px applied to the font size*/
+    display: flex; /*Responsive for Mobile*/
+  align-items: center; /*Center Vertically*/
+  justify-content: space-between; /*Adds space between logo and menu with flex*/
+ 
+}
+
+
+.footer__copyright {
+    font-size: 12px; /*12px applied to the font size*/
+    font-weight: lighter; /*Lighter bold applied to the text*/
+    margin-left: 56px; /*56px left space margin applied*/
+}
+
+
+.footer__link {
+    display: flex; /*Responsive*/
+    justify-content: center; /*Center Horizontally*/
+    align-items: center; /*Center Vertically*/
+    text-transform: uppercase; /*All text will be capitalized*/
+    letter-spacing: 1px; /*1px of spacing applied in between each letter*/
+}
+
+
+/* RESPONSIVE MOBILE*/
+
+@media  (max-width: 550px) {
+   
+    button {
+        padding-right: 48px; /*48px of space added to the right when the width is less than 550px*/
+    }
+
+    .nav__link--list {
+        display: none; /*unordered lists will NOT be displayed under 550px width*/
+    }
+
+    .nav__link--more {
+        display: block; /*Will display the hamburger menu once the width is <= 550px*/
+        width: 100%; /*Takes 100% of the screen width*/
+        padding: 0 24px; /*Adds space to the class 24px left and right*/
+    }
+    /*My approach to removing excess space between the two paragraps
+    and the form was to apply 0 margin, however I was unable to do so.
+    Will positioning with relative/absolute work?*/
+     .simple__way {
+        width: 100%; /*Takes 100% of the screen width*/
+        margin: 0 auto; /*Centers elements automatically with the margin*/
+        padding-right: 20px;
+        font-size: 12px;
+        text-align: center;
+        
+    }
+   .simple__way--motivate {
+      padding-left: 50px;
+       text-align: left;
+       width: 100%; /*Takes 100% of the screen width*/
+   }
+   
+   .footer__copyright {
+
+       flex-direction: column; /*Flex will be shown veritcally (column*/
+   }
+
+/* For lines 338 - 340
+   My approach was to have the copyright and footer links be displayed vertically for mobile
+   devices. I was not able to implement this, and did the best I could. I would like to see what
+   I could've approved on to not make the same mistake when working with teams.
+*/
+
+   .footer__link {
+    display: block;
+}
+
+
+input[type=text],
+input[type=email],
+input[type=password] {
+    padding: 10px;
+    flex-direction: column;
+    background-color: rgba(202, 198, 198, 0.2);
+    width: 225px;
+    height: 40px;
+    
+}
+
+.submit__form {
+    
+    text-align: center;
+    width: 225px;
+    height: 40px;
+}
+
+.signup__form--input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid #ddd;
+    width: 225px;
+    
+
+}
+
+
+
+#togglePassword {
+    float: right;
+    margin-left: 150px;
+    margin-top: -25px;
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+  }
+
+
+}
+
+

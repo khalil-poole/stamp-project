@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+
+    <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
+    <title>Stamp Project</title>
+</head>
+
+<body>
+    <!--My overall design approach was to not only emulate the design as close as 
+        possible with my ongoing skill set, but to write clear and concise code with practices such as
+        BEM (Block Element Modifier) where applicable, implement visual quality of life flair for customers,
+        and reuse code where applicable to save the dev team time. ---->
+
+    <!---Top of the page with logo, nav, and hamburger menu------->
+    <section id="top__page">
+        <nav>
+            <div class="company__name">Stamp
+                <!---The button will show additional information upon being clicked.
+                    
+                    ----->
+                <button class="
+                    nav__link--bars"><i class="fa fa-bars" aria-hidden="true" onclick="openMenu()"></i>
+                </button>
+            </div>
+            <!----Top Right Menu with Hamburger for Mobile Devices---->
+            <div class="menu__backdrop">
+                <button class="
+                    nav__link--bars--closed"><i class="fa fa-bars" aria-hidden="true" onclick="closeMenu()"></i>
+                </button>
+                <ul class="nav__link--list--mobile">
+                    <li class="nav__link--mobile">
+                        <a href="#" class="
+                        nav__link--anchor--mobile">
+                            About</a>
+                    </li>
+                    <li class="nav__link--mobile">
+                        <a href="#" class="
+                        nav__link--anchor--mobile">
+                            Integrations</a>
+                    </li>
+                    <li class="nav__link--mobile">
+                        <a href="#" class="
+                        nav__link--anchor--mobile">
+                            Pricing</a>
+                    </li>
+                    <li class="nav__link--mobile">
+                        <a href="#" class="
+                        nav__link--anchor--mobile">
+                            Contacts</a>
+                    </li>
+
+                </ul>
+                <!--Hamburger Mobile END-->
+            </div>
+            <ul class="nav__link--list">
+                <li class="nav__link">
+                    <a href="#" class="
+                    nav__link--anchor">
+                        About</a>
+                </li>
+                <li class="nav__link">
+                    <a href="#" class="
+                    nav__link--anchor">
+                        Integrations</a>
+                </li>
+                <li class="nav__link">
+                    <a href="#" class="
+                    nav__link--anchor">
+                        Pricing</a>
+                </li>
+                <li class="nav__link">
+                    <a href="#" class="
+                    nav__link--anchor">
+                        Contacts</a>
+                </li>
+
+            </ul>
+        </nav>
+    </section>
+    <!---Top Page END----->
+    <!---About Section that contains the text and form----->
+    <section id="about">
+        <div class="simple__way">
+            <p class="simple__way--para">simple way to<br>organize your<br>inspirations.</p>
+            <p class="simple__way--motivate">I think what motivates people is not great hate,<br>but great love for
+                other people.</p>
+        </div>
+        <div class="simple__way">
+            <header class="signup__form">sign up for free</header>
+            <!--Form that requires all inputs, and additional functionality to toggle the password view on or off.
+                I utilized the show/hide password functionality with JavaScript, however I am interested to see
+                how I can change the font awesome icon from the cross out eye, until the non crossed eye in JS. 
+                I also for some reason was unable to figure out how to make the font of the placeholder text to be white.----->
+            <form class="signup__form--input">
+                <input type="text" placeholder="Name" required>
+                <input type="email" placeholder="E-mail" required>
+                <input type="password" placeholder="Password" id="insertPassword" required>
+                <span toggle="#password__field" class="fa fa-eye-slash field-icon" id="togglePassword"></span>
+                <!--In the design folder, there is the png files that show the landing page. I was having some difficulty with the placeholder text
+                as I am unable to have the words "Sign up" followed by the chevron icon to show up on my version of
+                the landing page. I am curious if there is a way to insert font awesome icons inside the input submit type. ---->
+                <input class="submit__form" type="submit" placeholder="Sign up >">
+            </form>
+            <p class="simple__way--clicking">By clicking "Submit" I agree to our<br></p>
+            <a href="#" class="terms">Terms of Service.</a>
+        </div>
+    </section>
+    <!---About Section END-->
+    <!---Footer Section containing copyright info and additional links--->
+    <div id="end__page">
+        <div class="footer__copyright">&copy; 2016 Stamp. All Rights Reserved</div>
+        <ul class="footer__link">
+            <li class="footer__links"><a href="#">contact</a></li>
+            <li class="footer__links"><a href="#">help</a></li>
+            <li class="footer__links"><a href="#">terms of use</a></li>
+            <li class="footer__links"><a href="#">privacy policy</a></li>
+
+        </ul>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
